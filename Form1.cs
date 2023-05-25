@@ -11,8 +11,8 @@ namespace prayer_timing_app
 {
     public partial class MainForm : Form
     {
-        private string excelFilePath = "C:\\Users\\M.Centeno\\Desktop\\prayer_timing_app\\worldcities.xlsx";
-        private string audioFilePath = "C:\\Users\\M.Centeno\\Desktop\\prayer_timing_app\\PrayerAlarm.wma";
+        private string excelFilePath = "C:\\Users\\kriss\\source\\repos\\prayer_timing_app\\csv\\worldcities.xlsx";
+        private string audioFilePath = "C:\\Users\\kriss\\source\\repos\\prayer_timing_app\\csv\\shia-azan-Sharif.wma";
 
         private ExcelPackage excelPackage;
         private ExcelWorksheet worksheet;
@@ -184,6 +184,17 @@ namespace prayer_timing_app
 
             // restet
             PerformCalculation();
+        }
+
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            currentTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void upcomingPrayer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

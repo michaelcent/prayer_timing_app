@@ -70,6 +70,8 @@ namespace prayer_timing_app
             this.currentTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label9 = new System.Windows.Forms.Label();
+            this.kryptonPalette1 = new Krypton.Toolkit.KryptonPalette(this.components);
+            this.sunriseLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,12 +100,12 @@ namespace prayer_timing_app
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(678, 52);
+            this.label2.Font = new System.Drawing.Font("Papyrus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 182);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "City";
+            this.label2.Size = new System.Drawing.Size(120, 42);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Sunrise";
             // 
             // cityCombo
             // 
@@ -177,16 +179,17 @@ namespace prayer_timing_app
             // 
             // datePicker
             // 
-            this.datePicker.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Font = new System.Drawing.Font("Liberation Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePicker.Location = new System.Drawing.Point(24, 93);
             this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(212, 32);
+            this.datePicker.Size = new System.Drawing.Size(234, 29);
             this.datePicker.TabIndex = 10;
+            this.datePicker.Value = new System.DateTime(2023, 5, 25, 12, 43, 41, 0);
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Beige;
-            this.menuStrip1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem,
@@ -195,9 +198,9 @@ namespace prayer_timing_app
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(772, 27);
-            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(815, 29);
+            this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // homeToolStripMenuItem
@@ -345,13 +348,37 @@ namespace prayer_timing_app
             this.label9.TabIndex = 20;
             this.label9.Text = "C urrent Time";
             // 
+            // kryptonPalette1
+            // 
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 20F;
+            // 
+            // sunriseLabel
+            // 
+            this.sunriseLabel.AutoSize = true;
+            this.sunriseLabel.BackColor = System.Drawing.Color.Transparent;
+            this.sunriseLabel.Font = new System.Drawing.Font("Papyrus", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sunriseLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.sunriseLabel.Location = new System.Drawing.Point(64, 224);
+            this.sunriseLabel.Name = "sunriseLabel";
+            this.sunriseLabel.Size = new System.Drawing.Size(48, 42);
+            this.sunriseLabel.TabIndex = 21;
+            this.sunriseLabel.Text = "---";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(772, 598);
+            this.ClientSize = new System.Drawing.Size(815, 598);
+            this.Controls.Add(this.sunriseLabel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.currentTime);
             this.Controls.Add(this.label8);
@@ -374,9 +401,15 @@ namespace prayer_timing_app
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Papyrus", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HeaderStyle = Krypton.Toolkit.HeaderStyle.Primary;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Palette = this.kryptonPalette1;
+            this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
+            this.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.Text = "Prayer Times";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -415,6 +448,8 @@ namespace prayer_timing_app
         private System.Windows.Forms.Label currentTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label9;
+        private Krypton.Toolkit.KryptonPalette kryptonPalette1;
+        private System.Windows.Forms.Label sunriseLabel;
     }
 }
 

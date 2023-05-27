@@ -6,13 +6,14 @@ using Newtonsoft.Json.Linq;
 using OfficeOpenXml;
 using System.Linq;
 using System.Media;
+using Krypton.Toolkit;
 
 namespace prayer_timing_app
 {
-    public partial class MainForm : Form
+    public partial class MainForm : KryptonForm
     {
-        private string excelFilePath = "C:\\Users\\kriss\\source\\repos\\prayer_timing_app\\csv\\worldcities.xlsx";
-        private string audioFilePath = "C:\\Users\\kriss\\source\\repos\\prayer_timing_app\\csv\\shia-azan-Sharif.wma";
+        private string excelFilePath = "C:\\Users\\kriss\\Source\\Repos\\prayer_timing_app\\Data\\worldcities.xlsx";
+        private string audioFilePath = "C:\\Users\\kriss\\Source\\Repos\\prayer_timing_app\\Media\\shia-azan-Sharif.wma";
 
         private ExcelPackage excelPackage;
         private ExcelWorksheet worksheet;
@@ -93,6 +94,8 @@ namespace prayer_timing_app
             PerformCalculation();
         }
 
+       
+
         private void PerformCalculation()
         {
             DateTime selectedDate = datePicker.Value;
@@ -119,6 +122,7 @@ namespace prayer_timing_app
             string isha = timings["Isha"].ToString();
 
             fajrLabel.Text = fajr;
+            sunriseLabel.Text = sunrise;
             dhuhrLabel.Text = dhuhr;
             asrLabel.Text = asr;
             maghribLabel.Text = maghrib;
@@ -192,9 +196,6 @@ namespace prayer_timing_app
             currentTime.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void upcomingPrayer_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

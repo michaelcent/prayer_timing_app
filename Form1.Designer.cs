@@ -404,8 +404,6 @@ namespace prayer_timing_app
             this.HeaderStyle = Krypton.Toolkit.HeaderStyle.Primary;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Palette = this.kryptonPalette1;
-            this.PaletteMode = Krypton.Toolkit.PaletteMode.Custom;
             this.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | Krypton.Toolkit.PaletteDrawBorders.Left) 
             | Krypton.Toolkit.PaletteDrawBorders.Right)));

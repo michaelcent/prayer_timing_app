@@ -6,11 +6,10 @@ using Newtonsoft.Json.Linq;
 using OfficeOpenXml;
 using System.Linq;
 using System.Media;
-using Krypton.Toolkit;
 
 namespace prayer_timing_app
 {
-    public partial class MainForm : KryptonForm
+    public partial class MainForm : Form
     {
         private string excelFilePath = "C:\\Users\\kriss\\Source\\Repos\\prayer_timing_app\\Data\\worldcities.xlsx";
         private string audioFilePath = "C:\\Users\\kriss\\Source\\Repos\\prayer_timing_app\\Media\\shia-azan-Sharif.wma";
